@@ -17,7 +17,7 @@ class Program
     }
 
     public static int SquareNumber(int numToSquare) {
-        return (int) Math.Sqrt(numToSquare);
+        return (int) Math.Pow(numToSquare, 2);
     }
 
     public static void DisplayResult(string userName, int userNum) {
