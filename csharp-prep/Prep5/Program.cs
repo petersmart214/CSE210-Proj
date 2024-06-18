@@ -11,6 +11,7 @@ class Program
         Console.WriteLine("Please input your name...");
         return Console.ReadLine();
     }
+
     public static int PromptUserNumber() {
         Console.WriteLine("Please input your number...");
         return int.Parse(Console.ReadLine());
@@ -23,6 +24,7 @@ class Program
     public static void DisplayResult(string userName, int userNum) {
         Console.WriteLine($"For {userName} your number is {userNum}.");
     }
+    
     static void Main(string[] args)
     {
         DisplayWelcome();
