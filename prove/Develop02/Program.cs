@@ -117,7 +117,6 @@ class Program
 
     static List<JournalEntry> loadFromFolder(string fileToLoad = "journalentries") {
         List<JournalEntry> loadedEntries = new List<JournalEntry>();
-        //TODO: add choice of file (currently it grabs all entries from all the local jsons and then saves them all in the same file)
         try {
                 loadedEntries.AddRange(JsonSerializer.Deserialize<List<JournalEntry>>(File.ReadAllText(string.Concat(fileToLoad, ".json"))));
         return loadedEntries;

@@ -4,19 +4,20 @@ using System.Linq.Expressions;
 class Program
 {
 
-    public static void Loop() {
-        Console.WriteLine("Input a Random Number 1 to 10");
-        Boolean cont = true;
-        int randNum = new Random().Next(1, 11);
-        while (cont) {
-            int picked = int.Parse(Console.ReadLine());
-            if (randNum == picked) {Console.WriteLine("You got it!"); break;}
-            if (randNum > picked) Console.WriteLine("Higher");
-            if (randNum < picked) Console.WriteLine("Lower");
-        }
-    }
     static void Main(string[] args)
     {
-        Loop();
+        Fraction frac1 = new Fraction();
+        Fraction frac2 = new Fraction(5);
+        Fraction frac3 = new Fraction(3, 4);
+        Fraction frac4 = new Fraction(1, 3);
+
+        Console.WriteLine(frac1.getFractionString());
+        Console.WriteLine(frac1.getDecimalValue());
+        Console.WriteLine(frac2.getFractionString());
+        Console.WriteLine(frac2.getDecimalValue());
+        Console.WriteLine(frac3.getFractionString());
+        Console.WriteLine(frac3.getDecimalValue());
+        Console.WriteLine(frac4.getFractionString());
+        Console.WriteLine(frac4.getDecimalValue());
     }
 }
