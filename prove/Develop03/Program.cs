@@ -72,6 +72,7 @@ class ScriptureWrapper {
 
     public Boolean getReduced(int amountToCut) {
         //This is horrible, disgusting, and awful. From de-incrementing a loop, to having to check a bool mid-method to ensure it doesnt loop infinitely, to checking every word with a regex function that presumably checks ever char... buuuuuuut it works
+        //oops, needs the verses to be the same length for it to not get stuck, Ill fix it later
         Boolean hasLeft = true;
         Random rand = new Random();
         string[][] verses = scrip.getVerse();
@@ -81,7 +82,7 @@ class ScriptureWrapper {
             foreach(string checkStr in splitScrip) {
                 if(!finishCheck.IsMatch(checkStr)) hasLeft = false;
             }
-            if (hasLeft) return true;
+            if (hasLeft) continue;
             for(int ii = 0; ii < amountToCut; ii++) {
                 int cutIndex = rand.Next(0, splitScrip.Length);
                 if(finishCheck.IsMatch(splitScrip[cutIndex])) {
